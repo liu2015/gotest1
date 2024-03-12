@@ -11,5 +11,6 @@ func main() {
 	getcommit.Getcommit()
 	getcommit.Dev()
 	getcommit.Getmerge()
+	fmt.Println("递交分支到远程")
 
 }
