@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	getcommit "gotest/Getcommit"
+	"gotest/mainfmt"
 	"time"
 )
 
@@ -18,6 +19,6 @@ func main() {
 	time.Sleep(5 * time.Second)
 
 	fmt.Println("递交分支到远程")
-
+	mainfmt.Nametest()
 
 }
