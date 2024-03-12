@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	getcommit "gotest/Getcommit"
+	"time"
 )
 
 func main() {
@@ -12,5 +13,7 @@ func main() {
 	getcommit.Dev()
 	getcommit.Getmerge()
 	getcommit.GetSelect()
+
+	time.Sleep(5 * time.Second)
 
 }
