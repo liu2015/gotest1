@@ -1,8 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	getcommit "gotest/Getcommit"
+)
 
 func main() {
 	// fmt.print("你好")
 	fmt.Println("你好，这是一个程序的开始")
+	getcommit.Getcommit()
+
 }
