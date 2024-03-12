@@ -11,5 +11,6 @@ func main() {
 	getcommit.Getcommit()
 	getcommit.Dev()
 	getcommit.Getmerge()
+	getcommit.GetSelect()
 
 }
