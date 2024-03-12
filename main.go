@@ -12,8 +12,12 @@ func main() {
 	getcommit.Getcommit()
 	getcommit.Dev()
 	getcommit.Getmerge()
+
 	getcommit.GetSelect()
 
 	time.Sleep(5 * time.Second)
+
+	fmt.Println("递交分支到远程")
+
 
 }
