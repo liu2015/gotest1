@@ -20,6 +20,7 @@ func main() {
 	// oraclenumber.Oracletest()
 	// chantest.Chantest()
 	// chantest.Canselect()
+	fmt.Println("递交")
 	chantest.Chanselect1()
 
 	time.Sleep(10 * time.Second)
