@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	getcommit "gotest/Getcommit"
+	"gotest/chantest"
 	"gotest/mainfmt"
 	"gotest/oraclenumber"
 	"time"
@@ -19,6 +20,7 @@ func main() {
 	fmt.Println("递交分支到远程")
 	mainfmt.Nametest()
 	oraclenumber.Oracletest()
+	chantest.Chantest()
 
 	time.Sleep(5 * time.Second)
 
