@@ -24,8 +24,8 @@ func Chanselect1() {
 			select {
 			case num1 := <-chantest1:
 				fmt.Println("读取出来1", num1)
-			// case num2 := <-chantest1:
-			// 	fmt.Println("读取出来2", num2)
+			case num2 := <-chantest1:
+				fmt.Println("读取出来2", num2)
 			case <-timeout:
 				fmt.Println("缓存2秒读取")
 				fmt.Println("准备退出循环")
