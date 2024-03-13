@@ -4,6 +4,7 @@ import (
 	"fmt"
 	getcommit "gotest/Getcommit"
 	"gotest/mainfmt"
+	"gotest/oraclenumber"
 	"time"
 )
 
@@ -13,12 +14,12 @@ func main() {
 	getcommit.Getcommit()
 	getcommit.Dev()
 	getcommit.Getmerge()
-
 	getcommit.GetSelect()
-
-	time.Sleep(5 * time.Second)
 
 	fmt.Println("递交分支到远程")
 	mainfmt.Nametest()
+	oraclenumber.Oracletest()
+
+	time.Sleep(5 * time.Second)
 
 }
