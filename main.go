@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"gotest/maptest"
+	"gotest/stringtest"
 	"gotest/strtestv"
 	"gotest/structtest"
 	"gotest/tereflect"
@@ -75,6 +76,7 @@ func main() {
 	// fmt.Println("打印出方法的调用", fun.MethodByName("SetAge").Call(params2))
 
 	fmt.Println(fun.MethodByName("Print").Call(nil))
+	stringtest.Stringtest()
 
 	time.Sleep(10 * time.Second)
 
