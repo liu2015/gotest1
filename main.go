@@ -5,6 +5,7 @@ import (
 	"gotest/maptest"
 	"gotest/strtestv"
 	"gotest/structtest"
+	"gotest/tereflect"
 	"reflect"
 	"time"
 )
@@ -55,6 +56,25 @@ func main() {
 	}
 
 	fmt.Println("获得字段值~~", v.Field(1).Interface())
+
+	fmt.Println("~~~~~~~~~~~~~~~~~~~~~~")
+
+	stu1 := tereflect.Studentd{"tom", 23, "HanMei"}
+	fmt.Println("orgin student: ", stu1)
+	fun := reflect.ValueOf(&stu1).Elem()
+	fmt.Println(fun.MethodByName("Print").Call(nil)[0])
+
+	params := make([]reflect.Value, 2)
+	params[0] = reflect.ValueOf("Tom")
+	params[1] = reflect.ValueOf("LiLei")
+	fun.MethodByName("SetName").Call(params)
+
+	params2 := make([]reflect.Value, 1)
+	params2[0] = reflect.ValueOf(34)
+	fun.MethodByName("SetAge").Call(params2)
+	// fmt.Println("打印出方法的调用", fun.MethodByName("SetAge").Call(params2))
+
+	fmt.Println(fun.MethodByName("Print").Call(nil))
 
 	time.Sleep(10 * time.Second)
 
