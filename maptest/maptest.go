@@ -15,4 +15,9 @@ func Maptest() {
 		fmt.Println(k, v)
 	}
 
+	ted := 100000
+	for v := range ted {
+		fmt.Println("测试遍历：", v)
+	}
+
 }
