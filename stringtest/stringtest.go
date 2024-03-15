@@ -17,4 +17,13 @@ func Stringtest() {
 		fmt.Println("tes:", v)
 	}
 
+	tes1 := 4
+	switch tes1 {
+	case 1:
+		fmt.Println("值为1")
+	case 4:
+		fmt.Println("值为4")
+
+	}
+
 }
