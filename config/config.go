@@ -13,4 +13,5 @@ type Server struct {
 
 	Mysql Mysql `mapstructure:"mysql" json:"mysql" yaml:"mysql"`
 	Mssql Mssql `mapstructure:"mssql" json:"mssql" yaml:"mssql"`
+	Pgsql Pgsql `mapstructure:"pgsql" json:"pgsql" yaml:"pgsql"`
 }
