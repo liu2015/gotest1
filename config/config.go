@@ -10,4 +10,6 @@ type Server struct {
 	Captcha Captcha `mapstructure:"captcha" json:"captcha" yaml:"captcha"`
 
 	AutoCode Autocode `mapstructure:"autocode" json:"autocode" yaml:"autocode"`
+
+	Mysql Mysql `mapstructure:"mysql" json:"mysql" yaml:"mysql"`
 }
