@@ -12,4 +12,5 @@ type Server struct {
 	AutoCode Autocode `mapstructure:"autocode" json:"autocode" yaml:"autocode"`
 
 	Mysql Mysql `mapstructure:"mysql" json:"mysql" yaml:"mysql"`
+	Mssql Mssql `mapstructure:"mssql" json:"mssql" yaml:"mssql"`
 }
