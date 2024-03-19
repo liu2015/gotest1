@@ -2,6 +2,7 @@ package global
 
 import (
 	"ginserver/config"
+	"ginserver/timer"
 	"sync"
 
 	"github.com/qiniu/qmgo"
@@ -13,6 +14,7 @@ import (
 	"gorm.io/gorm"
 )
 
+// 设置全局的参数
 var (
 	GVA_DB                  *gorm.DB
 	GVA_DBList              map[string]*gorm.DB

@@ -224,6 +224,7 @@ func (t *timer) Close() {
 	}
 }
 
+// 这个是对外的方法 所以是T开头
 func NewTimerTask() Timer {
 	return &timer{cronList: make(map[string]*taskManager)}
 }
