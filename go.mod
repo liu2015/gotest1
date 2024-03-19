@@ -6,6 +6,7 @@ require (
 	github.com/bsm/ginkgo/v2 v2.12.0
 	github.com/qiniu/qmgo v1.1.8
 	github.com/redis/go-redis/v9 v9.5.1
+	github.com/robfig/cron/v3 v3.0.1
 	github.com/songzhibin97/gkit v1.2.12
 	github.com/spf13/viper v1.18.2
 	go.uber.org/zap v1.27.0

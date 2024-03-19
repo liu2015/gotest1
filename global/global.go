@@ -1,6 +1,7 @@
 package global
 
 import (
+	"ginserver/config"
 	"sync"
 
 	"github.com/qiniu/qmgo"
