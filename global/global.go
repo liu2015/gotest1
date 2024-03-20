@@ -28,3 +28,20 @@ var (
 	BlackCache              local_cache.Cache
 	lock                    sync.RWMutex
 )
+
+func GetGlobalDBByDBName(dbname string) *gorm.DB {
+
+	lock.RLock()
+	defer lock.RUnlock()
+	return GVA_DBList[dbname]
+}
+
+func MustGetGlobalDBByDBName(dbname string) *gorm.DB {
+	lock.RLock()
+	defer lock.RUnlock()
+	db, ok := GVA_DBList[dbname]
+	if !ok || db == nil {
+		panic("db no init ")
+	}
+	return db
+}
