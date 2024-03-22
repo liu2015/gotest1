@@ -8,7 +8,7 @@ type CasbinInfo struct {
 
 type CasbinInReceive struct {
 	AuthorityId uint         `json:"authorityId"`
-	CasbinInfos []CasbinInfo `json:casbinInfos`
+	CasbinInfos []CasbinInfo `json:"casbinInfos"`
 }
 
 func DefaultCasbin() []CasbinInfo {

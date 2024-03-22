@@ -2,7 +2,7 @@ package utils
 
 import (
 	"ginserver/global"
-	systemReq "ginserver/model/request"
+	systemReq "ginserver/model/system/request"
 	"net"
 
 	"github.com/gin-gonic/gin"

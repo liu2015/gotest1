@@ -1,6 +1,6 @@
 package system
 
-import system "ginserver/model/response"
+import system "ginserver/service/system/response"
 
 // 获得路由的总树map
 

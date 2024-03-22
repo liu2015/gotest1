@@ -3,7 +3,8 @@ package utils
 import (
 	"errors"
 	"ginserver/global"
-	"ginserver/model/request"
+	"ginserver/model/system/request"
+
 	"time"
 
 	"github.com/golang-jwt/jwt/v4"
@@ -70,6 +71,8 @@ func (j *JWT) ParseToken(tokenString string) (*request.CustomClaims, error) {
 			if ve.Errors&jwt.ValidationErrorMalformed != 0 {
 				return nil, TokenMalformed
 			} else if ve.Errors&jwt.ValidationErrorExpired != 0 {
+				return nil, TokenExpired
+			} else if ve.Errors&jwt.ValidationErrorNotValidYet != 0 {
 				return nil, TokenNotValidYet
 			} else {
 				return nil, TokenInvalid

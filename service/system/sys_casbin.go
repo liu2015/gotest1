@@ -2,7 +2,7 @@ package system
 
 import (
 	"ginserver/global"
-	"ginserver/model/request"
+
 	"strconv"
 	"sync"
 
