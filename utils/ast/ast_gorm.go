@@ -37,6 +37,7 @@ func AddRegisterTablesAst(path, funcName, pk, varName, dbName, model string) {
 
 }
 
+// 增加一个db库变量
 func addDBVar(astBody *ast.BlockStmt, varName, dbName string) {
 
 	if dbName == "" {
