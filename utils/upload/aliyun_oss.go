@@ -13,6 +13,11 @@ import (
 type AliyunOSS struct {
 }
 
+// DeleteFile implements OSS.
+func (a *AliyunOSS) DeleteFile(key string) error {
+	panic("unimplemented")
+}
+
 func (*AliyunOSS) UploadFile(file *multipart.FileHeader) (string, string, error) {
 	bucket, err := NewBucket()
 	if err != nil {
