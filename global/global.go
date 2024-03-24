@@ -2,7 +2,7 @@ package global
 
 import (
 	"ginserver/config"
-	"ginserver/timer"
+	"ginserver/utils/timer"
 	"sync"
 
 	"github.com/qiniu/qmgo"

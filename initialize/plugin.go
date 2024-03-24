@@ -2,10 +2,10 @@ package initialize
 
 import (
 	"fmt"
+	"ginserver/middleware"
 	"ginserver/utils/plugin"
 
 	"github.com/gin-gonic/gin"
-	"github.com/qiniu/qmgo/middleware"
 )
 
 func PluginInit(group *gin.RouterGroup, Plugin ...plugin.Plugin) {

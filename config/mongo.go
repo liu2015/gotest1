@@ -36,5 +36,5 @@ func (x *Mongo) Uri() string {
 	if x.Options != "" {
 		return fmt.Sprintf("mongodb://%s/%s?%s", strings.Join(hosts, ","), x.Database, x.Options)
 	}
-	return fmt.Sprintf("mongodb://%s/s", strings.Join(hosts, ","), x.Database)
+	return fmt.Sprintf("mongodb://%s/%s", strings.Join(hosts, ","), x.Database)
 }

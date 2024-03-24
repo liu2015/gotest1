@@ -3,7 +3,7 @@ package config
 // 这里使用的组合，GeneralDB 是在db_list 内
 
 type Mssql struct {
-	GeneralDB `"yaml:",inline" mapstructure:",squash"`
+	GeneralDB `yaml:",inline" mapstructure:",squash"`
 }
 
 func (m *Mssql) Dsn() string {
