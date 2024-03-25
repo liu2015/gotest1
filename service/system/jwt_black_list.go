@@ -12,7 +12,7 @@ import (
 type JwtService struct {
 }
 
-func (JwtService *JwtService) JsonInBlacklist(jwtList system.JwtBlacklist) (err error) {
+func (jwtService *JwtService) JsonInBlacklist(jwtList system.JwtBlacklist) (err error) {
 
 	err = global.GVA_DB.Create(&jwtList).Error
 	if err != nil {
@@ -22,7 +22,7 @@ func (JwtService *JwtService) JsonInBlacklist(jwtList system.JwtBlacklist) (err 
 	return
 }
 
-func (JwtService *JwtService) IsBlacklist(jwt string) bool {
+func (jwtService *JwtService) IsBlacklist(jwt string) bool {
 	_, ok := global.BlackCache.Get(jwt)
 	return ok
 }
@@ -33,7 +33,7 @@ func (jwtService *JwtService) GetRedisJWT(userName string) (redisJWT string, err
 	return redisJWT, err
 }
 
-func (JwtService *JwtService) SetRedisJWT(jwt string, userName string) (err error) {
+func (jwtService *JwtService) SetRedisJWT(jwt string, userName string) (err error) {
 	dr, err := utils.ParseDuration(global.GVA_CONFIG.JWT.ExpiresTime)
 	if err != nil {
 		return err
