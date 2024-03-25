@@ -3,13 +3,15 @@ package initialize
 import (
 	"context"
 	"fmt"
-	"ginserver/core/internal"
+
 	"ginserver/global"
+	"ginserver/initialize/internal"
 	"ginserver/utils"
 	"sort"
 	"strings"
 
 	"github.com/pkg/errors"
+	"github.com/qiniu/qmgo"
 	"github.com/qiniu/qmgo/options"
 	"go.mongodb.org/mongo-driver/bson"
 	option "go.mongodb.org/mongo-driver/mongo/options"
@@ -42,8 +44,32 @@ func (m *mongo) Indexes(ctx context.Context) error {
 func (m *mongo) Initialization() error {
 	var opts []options.ClientOptions
 	if global.GVA_CONFIG.Mongo.IsZap {
-		OPTS = internal.Mongo.GetCl
+		opts = internal.Mongo.GetClientOptions()
 	}
+	ctx := context.Background()
+	client, err := qmgo.Open(ctx, &qmgo.Config{
+		Uri:              global.GVA_CONFIG.Mongo.Uri(),
+		Coll:             global.GVA_CONFIG.Mongo.Coll,
+		Database:         global.GVA_CONFIG.Mongo.Database,
+		MinPoolSize:      &global.GVA_CONFIG.Mongo.MinPoolSize,
+		MaxPoolSize:      &global.GVA_CONFIG.Mongo.MaxPoolSize,
+		SocketTimeoutMS:  &global.GVA_CONFIG.Mongo.SocketTimeoutMs,
+		ConnectTimeoutMS: &global.GVA_CONFIG.Mongo.ConnectTimeoutMs,
+		Auth: &qmgo.Credential{
+			Username:   global.GVA_CONFIG.Mongo.Username,
+			Password:   global.GVA_CONFIG.Mongo.Password,
+			AuthSource: global.GVA_CONFIG.Mongo.AuthSource,
+		},
+	}, opts...)
+	if err != nil {
+		return errors.Wrap(err, "链接mongodb数据库失败!")
+	}
+	global.GVA_MONGO = client
+	err = m.Indexes(ctx)
+	if err != nil {
+		return err
+	}
+	return nil
 }
 
 func (m *mongo) CreateIndexes(ctx context.Context, name string, indexes [][]string) error {

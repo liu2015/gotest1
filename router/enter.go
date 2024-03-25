@@ -1,11 +1,13 @@
 package router
 
 import (
-	"ginserver/service/example"
-	"ginserver/service/system"
+	"ginserver/router/example"
+	"ginserver/router/system"
 )
 
 type RouterGroup struct {
 	System  system.RouterGroup
 	Example example.RouterGroup
 }
+
+var RouterGroupApp = new(RouterGroup)

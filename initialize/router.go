@@ -30,7 +30,7 @@ func Routers() *gin.Engine {
 	if gin.Mode() == gin.DebugMode {
 		Router.Use(gin.Logger())
 	}
-	InstallPlugin(Router)
+	InstallPlugin(Router) //安装插件
 	systemRouter := router.RouterGroupApp.System
 
 }
