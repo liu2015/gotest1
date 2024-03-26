@@ -15,9 +15,9 @@ type GeneralDB struct {
 	Engine       string `mapstructure:"engine" json:"engine" yaml:"engine" default:"InnoDB"`
 	LogMode      string `mapstructure:"log-mode" json:"log-mode" yaml:"log-mode"`
 	MaxIdleConns int    `mapstructure:"max-idle-conns" json:"max-idle-conns" yaml:"max-idle-conns"`
-
-	Singular bool `mapstructure:"singular" json:"singular" yaml:"singular"`
-	LogZap   bool `mapstructure:"log-zap" json:"log-zap" yaml:"log-zap"`
+	MaxOpenConns int    `mapstructure:"max-open-conns" json:"max-open-conns" yaml:"max-open-conns"` // 打开到数据库的最大连接数
+	Singular     bool   `mapstructure:"singular" json:"singular" yaml:"singular"`
+	LogZap       bool   `mapstructure:"log-zap" json:"log-zap" yaml:"log-zap"`
 }
 
 type SpecializedDB struct {

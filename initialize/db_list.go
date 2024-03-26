@@ -1,6 +1,7 @@
 package initialize
 
 import (
+	"ginserver/config"
 	"ginserver/global"
 
 	"gorm.io/gorm"
@@ -16,7 +17,9 @@ func DBList() {
 		}
 		switch info.Type {
 		case "mysql":
-			dbMap[info.AliasName] = gormm
+			dbMap[info.AliasName] = GormMysqlByConfig(config.Mysql{GeneralDB: info.GeneralDB})
+		case "mssql":
+
 		}
 	}
 }

@@ -10,7 +10,7 @@ import (
 
 func PluginInit(group *gin.RouterGroup, Plugin ...plugin.Plugin) {
 	for v := range Plugin {
-		// 用户反悔注册路由
+		// 用户注册路由
 		PluginGroup := group.Group(Plugin[v].RouterPath())
 		Plugin[v].Register(PluginGroup)
 
@@ -25,6 +25,6 @@ func InstallPlugin(Router *gin.Engine) {
 	fmt.Println("无鉴权插件安装==》", PublicGroup)
 	PrivateGroup := Router.Group("")
 	fmt.Println("健权插件安装==", PrivateGroup)
-	PrivateGroup.Use(middleware.JWTAuth()).Use(middleware.CasbinHandler())
+	PrivateGroup.Use(middleware.JWTAuth()).Use(middleware.)
 
 }

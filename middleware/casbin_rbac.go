@@ -2,4 +2,4 @@ package middleware
 
 import "ginserver/service"
 
-var casbinService = service.ServiceGroupApp.SystemServiceGroup.casbinService
+var casbinService = service.ServiceGroupApp.SystemServiceGroup.CasbinService
