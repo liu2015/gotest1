@@ -2,9 +2,11 @@ package initialize
 
 import (
 	"fmt"
+	"ginserver/global"
 	"ginserver/middleware"
-	"ginserver/utils/plugin"
+	"plugin"
 
+	"github.com/flipped-aurora/gin-vue-admin/server/plugin/email"
 	"github.com/gin-gonic/gin"
 )
 
@@ -25,6 +27,17 @@ func InstallPlugin(Router *gin.Engine) {
 	fmt.Println("无鉴权插件安装==》", PublicGroup)
 	PrivateGroup := Router.Group("")
 	fmt.Println("健权插件安装==", PrivateGroup)
-	PrivateGroup.Use(middleware.JWTAuth()).Use(middleware.)
+	PrivateGroup.Use(middleware.JWTAuth()).Use(middleware.CasbinHandler())
+
+	// 添加跟角色挂钩的插件
+	PluginInit(PrivateGroup, email.CreateEmailPlug{
+		global.GVA_CONFIG.Email.To,
+		global.GVA_CONFIG.Email.From,
+		global.GVA_CONFIG.Email.Host,
+		global.GVA_CONFIG.Email.Secret,
+		global.GVA_CONFIG.Email.Nickname,
+		global.GVA_CONFIG.Email.Port,
+		global.GVA_CONFIG.Email.IsSSL,
+	})
 
 }

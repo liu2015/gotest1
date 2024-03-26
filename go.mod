@@ -31,10 +31,12 @@ require (
 
 require (
 	github.com/jackc/pgx/v5 v5.3.1 // indirect
+	github.com/jordan-wright/email v0.0.0-20200824153738-3f5bafa1cd84 // indirect
 	github.com/mohae/deepcopy v0.0.0-20170929034955-c48cc78d4826 // indirect
 	github.com/otiai10/copy v1.7.0 // indirect
 	github.com/richardlehane/mscfb v1.0.4 // indirect
 	github.com/richardlehane/msoleps v1.0.3 // indirect
+	github.com/unrolled/secure v1.13.0 // indirect
 	github.com/xo/terminfo v0.0.0-20210125001918-ca9a967f8778 // indirect
 	github.com/xuri/efp v0.0.0-20230802181842-ad255f2331ca // indirect
 	github.com/xuri/excelize/v2 v2.8.0 // indirect
